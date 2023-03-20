@@ -1,0 +1,28 @@
+{
+  "name": "a02-functions-ellaparkunc",
+  "version": "1.0.0",
+  "description": "Creating an Installable Node.js CMD App Package",
+  "main": "index.js",
+  "bin": {
+    "galosh.js": "./cli.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a02-functions-ellaparkunc.git"
+  },
+  "author": "@ellaparkunc",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a02-functions-ellaparkunc/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a02-functions-ellaparkunc#readme",
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "moment-timezone": "^0.5.40",
+    "node-fetch": "^3.3.0"
+  }
+}
