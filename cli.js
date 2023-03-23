@@ -26,14 +26,14 @@ if (args.h){
 }
 
 //must use let here bc const must be initialized outside of an if/else
-let lattitude;
+let latitude;
 let longitude;
 
 //separating args, remember they can be under S and E as well!
 if (args.n){
-  lattitude = args.n;
+  latitude = args.n;
 } else if (args.s){
-  lattitude = -args.s;
+  latitude = -args.s;
 }
 
 if (args.e){
@@ -49,7 +49,7 @@ if (args.z){
 
 // Make a request, also TODO, add previously saved args to url
 //problem: url is not reading my variable bc it is certainly a float
-const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lattitude + '&longitude=' + longitude + '&daily=precipitation_hours&current_weather=true&timezone=' + timezone);
+const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&current_weather=true&timezone=' + timezone);
 
 // Get the data from the request
 const data = await response.json();
