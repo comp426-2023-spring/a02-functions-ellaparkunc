@@ -35,7 +35,7 @@ if (args.n){
 } else if (args.s){
   latitude = -args.s;
 } else if (!latitude){
-    console.log("Must include latitude.")
+    console.log("Latitude must be in range")
     process.exit(0);
 }
 
@@ -44,7 +44,7 @@ if (args.e){
 } else if (args.w){
   longitude = -args.w;
 }  else if (!longitude){
-  console.log("Must include longitude.")
+  console.log("Longitude must be in range")
   process.exit(0);
 }
 
