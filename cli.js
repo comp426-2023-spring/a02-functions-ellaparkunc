@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-//shebang for Node
-//to run this, do  galosh.js 35.9 79.0558
 import moment from 'moment-timezone';
 import fetch from 'node-fetch';
 import minimist from 'minimist';
@@ -10,7 +8,6 @@ let timezone = moment.tz.guess()
 
 //Grab provided args.
 const args = minimist(process.argv.slice(2));
-//console.log(args);
 
 let helpText = `Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
   -h            Show this help message and exit.
@@ -20,12 +17,12 @@ let helpText = `Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z T
   -d 0-6        Day to retrieve weather: 0 is today; defaults to 1.
   -j            Echo pretty JSON from open-meteo API and exit.`
 
-if (args.h){
+  if (args.h){
     console.log(helpText);
     process.exit(0);
 }
 
-//must use let here bc const must be initialized outside of an if/else
+//must use let here bc const can't be initialized inside an if/else
 let latitude;
 let longitude;
 
@@ -48,13 +45,10 @@ if (args.e){
   process.exit(0);
 }
 
-//didn't add a customizable timezone tag!
 if (args.z){
   timezone = args.z;
 }
 
-// Make a request, also TODO, add previously saved args to url
-//problem: url is not reading my variable bc it is certainly a float
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&current_weather=true&timezone=' + timezone);
 
 // Get the data from the request
@@ -75,4 +69,3 @@ if(args.j){
   console.log(data);
   process.exit(0);
 }
-
