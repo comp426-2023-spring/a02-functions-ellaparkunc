@@ -34,12 +34,18 @@ if (args.n){
   latitude = args.n;
 } else if (args.s){
   latitude = -args.s;
+} else if (!latitude){
+    console.log("Must include latitude.")
+    process.exit(1);
 }
 
 if (args.e){
   longitude = args.e;
 } else if (args.w){
   longitude = -args.w;
+}  else if (!longitude){
+  console.log("Must include longitude.")
+  process.exit(1);
 }
 
 //didn't add a customizable timezone tag!
